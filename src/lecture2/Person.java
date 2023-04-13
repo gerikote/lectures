@@ -50,15 +50,26 @@ public class Person {
                 + "Address is : " + address);
     }
 
-    public static void main (String [] args)
-    {
-        Person john = new Person("John",(byte)25,"Florida");
+    void printDetails(boolean shouldPrintAddress) {
+        if (shouldPrintAddress == true) {
+            this.printDetails();
+        } else {
+            System.out.println("Name is : " + name
+                    + " \n" + "Age is : " + age);
 
-        System.out.println( john.getName());
+        }
+    }
+
+    public static void main(String[] args) {
+        Person john = new Person("John", (byte) 25, "Florida");
+
+        System.out.println(john.getName());
         System.out.println(john.getAddress());
         System.out.println(john.getAge());
 
         john.printDetails();
+        System.out.println();
+        john.printDetails(false);
     }
 
 }
