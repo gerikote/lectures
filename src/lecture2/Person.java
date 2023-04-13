@@ -70,6 +70,11 @@ public class Person {
         john.printDetails();
         System.out.println();
         john.printDetails(false);
+
+        Person p1 =new Person("tom",(byte)20,"Texas");
+        Person p2 = p1;
+        p2.setAge((byte)30);
+        System.out.println(p1.getAge());
     }
 
 }
